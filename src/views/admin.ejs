@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/admin.css">
+    <title>Admin</title>
+</head>
+<body>
+    <%- include('header') -%>
+    <div class="main">
+        <div class="sidebar">
+            <ul class="sidebar-list">
+                <li class="sidebar-item" id="building">Building <button class="add-item-btn" id="addBuilding">Add</button></li>
+                <li class="sidebar-item" id="complex">Complex <button class="add-item-btn" id="addComplex">Add</button></li>
+                <li class="sidebar-item" id="house">House <button class="add-item-btn" id="addHouse">Add</button></li>
+                <li class="sidebar-item" id="bank">Bank <button class="add-item-btn" id="addBank">Add</button></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="building-content" id="buildingContent">
+                <div class="add-wrap" id="addBuildingWrap">
+                    <div class="add-form fade-up">
+                        <form action="/addbuilding" method="POST"  enctype="multipart/form-data">
+                            <label for="building">Building company</label>
+                            <input class="building-input" type="text" name="name" id="building" placeholder="Building company">
+                            <label for="image">Image</label>
+                            <input class="building-input" type="file" name="image" id="image">
+                            <button class="add-btn" type="submit">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="complex-content" id="complexContent">
+                <div class="add-wrap" id="addComplexWrap">
+                    <div class="add-form fade-up">
+                        <form action="/addcomplex" method="POST"  enctype="multipart/form-data">
+                            <label for="complex">Complex name</label>
+                            <input class="complex-input" type="text" name="name" id="complex" placeholder="Complex name">
+                            <label for="address">Address</label>
+                            <input class="complex-input" type="text" name="address" id="address" placeholder="Address">
+                            <label for="building">Building company</label>
+                            <select class="complex-input select" name="buildingId" id="buildingSelect">
+                                <option value="0" selected hidden disabled>Select</option>
+                            </select>
+                            <label for="image">Image</label>
+                            <input class="complex-input" type="file" name="image" id="image">
+                            <button class="add-btn" type="submit">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="house-content" id="houseContent">
+                <div class="add-wrap" id="addHouseWrap">
+                    <div class="add-form fade-up">
+                        <form action="/addhouse" method="POST"  enctype="application/x-www-form-urlencoded">
+                            <label for="house">House amount</label>
+                            <input class="house-input" type="number" name="amount" id="house" placeholder="House amount">
+                            <label for="capacity">Capacity</label>
+                            <input class="house-input" type="number" name="capacity" id="capacity" placeholder="Capacity">
+                            <label for="capacity_price">Complex price</label>
+                            <input class="house-input" type="number" name="capacityPrice" id="capacityPrice" placeholder="Complex price">
+                            <label for="complex">Complex</label>
+                            <select class="house-input select" name="complexId" id="complexSelect">
+                                <option value="0" selected hidden disabled>Select</option>
+                            </select>
+                            <button class="add-btn" type="submit">Add</button>
+                        </form>
+                    </div>
+                </div>
+            <div class="bank-content" id="bankContent">
+                <div class="add-wrap" id="addBankWrap">
+                    <div class="add-form fade-up">
+                        <form action="/add-bank" method="POST" enctype="multipart/form-data">
+                            <label for="bank">Bank name</label>
+                            <input class="bank-input" type="text" name="name" id="bank" placeholder="Bank name">
+                            <label for="maxAmount">Max amout</label>
+                            <input class="bank-input" type="number" name="maxAmount" id="maxamount" placeholder="Max amount">
+                            <label for="creditDeadline">Credit deadline</label>
+                            <input class="bank-input" type="number" name="creditDeadline" id="credit-deadline" placeholder="Credit deadline">
+                            <label for="starterAmount">Starter amount</label>
+                            <input class="bank-input" type="number" name="starterAmount" id="starter-amount" placeholder="Starter amount">
+                            <label for="image">Image</label>
+                            <input class="bank-input" type="file" name="image" id="image">
+                            <button class="add-btn" type="submit">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="bank-list" id="bank-list">
+                <ul class="bank-list-ul" id="bankList">
+                </ul>
+            </div>    
+            <div class="complex-content" id="complexContent">
+                <ul class="complex-list" id="complexList">
+                </ul>
+            </div>
+            <div class="house-content" id="houseContent">
+                <ul class="complex-list" id="houseList">
+                </ul>
+            </div>
+            <div class="building-list" id="building-list">
+                <ul class="building-list-ul" id="buildingList">
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/admin.js"></script>
+</html>

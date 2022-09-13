@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Credo House</title>
+</head>
+<body>
+    <%- include('header') -%>
+    <div class="main">
+        <div class="sidebar">
+            <h3>Choose your home</h3>
+            <label for="building">Building company</label>
+            <select name="building" id="selectBuilding">
+                <option value="" disabled selected hidden>Select building company</option>
+                <% for (var i = 0; i < buildings.length; i++) { %>
+                    <option value="<%= buildings[i].building_id %>"><%= buildings[i].building_name %></option>
+                <% } %>
+            </select>
+            <label for="complex">Complex</label>
+            <select name="complex" id="selectComplex">
+                <option value="" disabled selected hidden>Select complex</option>
+            </select>
+            <label for="house">Rooms</label>
+            <select name="house" id="selectHouse">
+                <option value="" disabled selected hidden>Select rooms</option>
+            </select>
+            <label for="period">Mortgage duration</label>
+            <select name="period" id="selectPeriod">
+                <option value="" disabled selected hidden>Select period</option>
+            </select>
+        </div>
+        <div class="content">
+            <div class="house-content">
+                <div class="building-item" id="buildingResult"></div>
+                <div class="complex-item" id="complexResult"></div>
+            </div>
+            <div class="bank-item fade-up" id="bankResult"></div>
+            <div class="mortgage-item" id="mortgageResult"></div>  
+        </div>
+    </div>
+</body>
+<script src="/js/main.js"></script>
+</html>
