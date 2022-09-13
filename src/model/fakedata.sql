@@ -1,4 +1,3 @@
-
 INSERT INTO buildings(building_name, building_image) VALUES ('Murad buildings', 'murad-buildings.png');
 INSERT INTO buildings(building_name, building_image) VALUES ('Golden House', 'golden-house.png');
 INSERT INTO buildings(building_name, building_image) VALUES ('Dreamcity', 'dreamcity.png');
